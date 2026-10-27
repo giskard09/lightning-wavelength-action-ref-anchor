@@ -1,0 +1,45 @@
+{
+  "action_ref": "6422c5adbb2521e62f97722dcfee7c682968fe1cd4c889b113fa74e5e6343698",
+  "anchor_chain": "Base mainnet (chainId 8453)",
+  "anchor_ref_bytes32": "0x6422c5adbb2521e62f97722dcfee7c682968fe1cd4c889b113fa74e5e6343698",
+  "anchor_registry": "0x49fEcA52bC634a9Ab773226D16619deC547794aa",
+  "envelope": {
+    "action_ref": "6422c5adbb2521e62f97722dcfee7c682968fe1cd4c889b113fa74e5e6343698",
+    "capability": "l402_resource_access_paid",
+    "generated_at_utc": "2026-10-27T13:53:00.000Z",
+    "hash_algo": "sha256",
+    "l402": {
+      "chain": "testnet3",
+      "macaroon_b64": "AgEAAkIAAN6sc3WXKaqEJCYLsX8gRXQlQ3NjJHTIQT0Nu5SW7j6ojwAKzC1TssGMhAGgVY97SwB5mfR//aprE2pukvKiRxYAAh5zZXJ2aWNlcz1sNDAyLXdvcmtlZC1leGFtcGxlOjAAAAYgYhZuntImEsE47rBZyaEaXI8xNrUkRExIRhfg4Xdq9xE=",
+      "macaroon_signature_hex": "62166e9ed22612c138eeb059c9a11a5c8f3136b524444c484617e0e1776af711",
+      "merchant_node_id": "0335ffe8fdcc8c623be1789810ff47024d1e9700587d3c074ac27784949988f10f",
+      "payer_node_id": "023e1fb894a79e0304fee0958681f491ddc6221142520ff793a2a1c1a06d3badd3",
+      "payment_hash": "deac73759729aa8424260bb17f204574254373632474c8413d0dbb9496ee3ea8",
+      "preimage": "e3fc9bcc0a3eeb6e8f5d5cced66add83888bb51c3c1c73489162507d2b03f1b0",
+      "recipient_amount_sat": 50,
+      "resource": "/premium-data",
+      "routing_fee_sat": 4
+    },
+    "packet_version": "1.0",
+    "preimage": {
+      "action_type": "l402.resource_access_paid",
+      "agent_id": "worked-example.lightning-wavelength-action-ref-anchor",
+      "scope": "l402:payment_hash:deac73759729aa8424260bb17f204574254373632474c8413d0dbb9496ee3ea8:resource:/premium-data",
+      "timestamp": "2026-10-27T13:53:00.000Z"
+    },
+    "preimage_format": "jcs-rfc8785-v1"
+  },
+  "fixture_id": "lightning-wavelength-l402-worked-example",
+  "jcs_payload": "{\"action_type\":\"l402.resource_access_paid\",\"agent_id\":\"worked-example.lightning-wavelength-action-ref-anchor\",\"scope\":\"l402:payment_hash:deac73759729aa8424260bb17f204574254373632474c8413d0dbb9496ee3ea8:resource:/premium-data\",\"timestamp\":\"2026-10-27T13:53:00.000Z\"}",
+  "l402_client_source": "l402/client.py (this repo)",
+  "l402_server_source": "l402/server.py (this repo)",
+  "l402_spec_reference": "lightninglabs/L402 protocol-specification.md + macaroon-spec.md. One correction applied against macaroon-spec.md's documented HMAC chain, verified against pymacaroons (the spec's own named Python reference implementation): the real chain derives a key first -- derived_key = HMAC-SHA256(b'macaroons-key-generator', root_key), sig_0 = HMAC-SHA256(derived_key, identifier) -- which the doc's sig_0 = HMAC(root_key, identifier) formula omits. A macaroon minted per the doc's literal formula would not verify against pymacaroons, libmacaroons, or gopkg.in/macaroon.v2 (so not against Aperture either). See PROVENANCE.md.",
+  "preimage": {
+    "action_type": "l402.resource_access_paid",
+    "agent_id": "worked-example.lightning-wavelength-action-ref-anchor",
+    "scope": "l402:payment_hash:deac73759729aa8424260bb17f204574254373632474c8413d0dbb9496ee3ea8:resource:/premium-data",
+    "timestamp": "2026-10-27T13:53:00.000Z"
+  },
+  "provenance": "REAL, not synthetic. l402/server.py is a real, spec-faithful L402 server; its merchant invoice was created by a real phoenixd (ACINQ) testnet3 node. l402/client.py's payer is a separate real phoenixd testnet3 node, funded from a public testnet3 faucet, which paid that invoice over the real Lightning Network. The preimage above is this run's literal payment proof: sha256(preimage) == payment_hash, independently checked before being written here, and the server's own macaroon+preimage verification returned HTTP 200 for it. Aperture (lightninglabs' reference L402 proxy) was not run -- its lndclient backend does not support phoenixd, a different Lightning implementation. See PROVENANCE.md for the full statement, including why phoenixd and testnet3 (not Wavelength's own waved/Ark stack or signet).",
+  "spec": "action-ref-v1 (argentum-core, docs/spec/action-ref.md)"
+}
