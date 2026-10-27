@@ -98,7 +98,9 @@ python3 verifier/verify.py
 - `preimage`: `e3fc9bcc0a3eeb6e8f5d5cced66add83888bb51c3c1c73489162507d2b03f1b0`
   (real Lightning Network testnet3 payment, 50 sats + 4 sats routing fee)
 - `action_ref`: `6422c5adbb2521e62f97722dcfee7c682968fe1cd4c889b113fa74e5e6343698`
-- Anchor status: **pending** — not yet anchored on Base mainnet.
+- Anchor status: **anchored** — Base mainnet, tx
+  [`0x9d26a6d519458d59ff9e790e4cac5266342f388ed351d11571d465864c3c59dc`](https://basescan.org/tx/0x9d26a6d519458d59ff9e790e4cac5266342f388ed351d11571d465864c3c59dc),
+  block 53160204.
 
 ## License
 

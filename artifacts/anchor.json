@@ -1,0 +1,10 @@
+{
+  "action_ref": "6422c5adbb2521e62f97722dcfee7c682968fe1cd4c889b113fa74e5e6343698",
+  "anchor_ref_bytes32": "0x6422c5adbb2521e62f97722dcfee7c682968fe1cd4c889b113fa74e5e6343698",
+  "chain": "Base mainnet (chainId 8453)",
+  "registry": "0x49fEcA52bC634a9Ab773226D16619deC547794aa",
+  "tx_hash": "0x9d26a6d519458d59ff9e790e4cac5266342f388ed351d11571d465864c3c59dc",
+  "block": 53160204,
+  "block_timestamp_unix": 1793109755,
+  "anchored_by": "0xDcc84E9798E8eB1b1b48A31B8f35e5AA7b83DBF4"
+}
